@@ -42,8 +42,8 @@ function SocialCard({ type, imageSrc, title, content, stats }: SocialCardProps) 
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
               <div className="p-4">
                 <div className="flex items-center mb-2">
-                  <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Profile" className="w-8 h-8 rounded-full mr-2" />
-                  <span className="font-medium">yourprofile</span>
+                  <img src="https://imgs.search.brave.com/xoJlXN3BoMufCgFbjC2-7P2FYMUMvllzbdHMm6L2TIM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL3RodW1icy81/ODQ1ZTM1OGNlZjEw/MTRjMGI1ZTM4NjUu/cG5n" alt="Profile" className="w-8 h-8 rounded-full mr-2" />
+                  <span className="font-medium">jalil.irfan</span>
                 </div>
                 <p className="text-sm">{content}</p>
               </div>
@@ -61,7 +61,12 @@ function SocialCard({ type, imageSrc, title, content, stats }: SocialCardProps) 
               </div>
               <span className="text-gray-500 text-sm">{stats.date}</span>
             </div>
-            <a href="#" className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center justify-center hover:opacity-90 transition-opacity">
+            <a 
+              href="https://www.instagram.com/p/DHabA3gx9aO/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center justify-center hover:opacity-90 transition-opacity"
+            >
               <i className="fab fa-instagram mr-2"></i> View on Instagram
             </a>
           </div>
@@ -78,7 +83,10 @@ function SocialCard({ type, imageSrc, title, content, stats }: SocialCardProps) 
               </div>
             </div>
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-              <h3 className="font-medium">{title}</h3>
+              <div>
+                <h3 className="font-medium">{title}</h3>
+                <p className="text-sm text-gray-400">Jalil Irfan</p>
+              </div>
             </div>
           </div>
           <div className="p-4">
@@ -93,7 +101,12 @@ function SocialCard({ type, imageSrc, title, content, stats }: SocialCardProps) 
               </div>
               <span className="text-gray-500 text-sm">{stats.date}</span>
             </div>
-            <a href="#" className="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center justify-center hover:bg-red-700 transition-colors">
+            <a 
+              href="https://youtu.be/sB_M3uI_HP0" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center justify-center hover:bg-red-700 transition-colors"
+            >
               <i className="fab fa-youtube mr-2"></i> Watch on YouTube
             </a>
           </div>
@@ -103,10 +116,10 @@ function SocialCard({ type, imageSrc, title, content, stats }: SocialCardProps) 
       {type === "linkedin" && (
         <div className="p-6">
           <div className="flex items-center mb-4">
-            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Profile" className="w-12 h-12 rounded-full mr-3" />
+            <img src="https://imgs.search.brave.com/xoJlXN3BoMufCgFbjC2-7P2FYMUMvllzbdHMm6L2TIM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL3RodW1icy81/ODQ1ZTM1OGNlZjEw/MTRjMGI1ZTM4NjUu/cG5n" alt="Profile" className="w-12 h-12 rounded-full mr-3" />
             <div>
-              <h3 className="font-medium">Your Name</h3>
-              <p className="text-sm text-gray-400">Software Developer | AI Enthusiast</p>
+              <h3 className="font-medium">Jalil Irfan</h3>
+              <p className="text-sm text-gray-400">Software Developer | Game Designer | AI Enthusiast</p>
             </div>
           </div>
           <div className="mb-4">
@@ -130,7 +143,12 @@ function SocialCard({ type, imageSrc, title, content, stats }: SocialCardProps) 
               <span>{stats.comments} comments</span>
             </div>
           </div>
-          <a href="#" className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center justify-center hover:bg-blue-700 transition-colors">
+          <a 
+            href="https://www.linkedin.com/posts/jalil-irfan_vibecoding-vibejam-uyar-activity-7310201134873223168-NKK1" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center justify-center hover:bg-blue-700 transition-colors"
+          >
             <i className="fab fa-linkedin mr-2"></i> View on LinkedIn
           </a>
         </div>
@@ -143,35 +161,35 @@ export default function SocialHighlights() {
   const socialData = [
     {
       type: "instagram" as const,
-      imageSrc: "https://images.unsplash.com/photo-1569721983411-8c49607cea2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+      imageSrc: "https://imgs.search.brave.com/AjKJu7iQjbZVk7C1sNTJ_FTqLXrR1MuCYU94wGzHw_s/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/MzE3NDYxMzM0ODkt/MzVjZWU5MWRhNTQ0/P2l4bGliPXJiLTQu/MC4zJml4aWQ9TTN3/eE1qQTNmREI4TUh4/elpXRnlZMmg4TVRk/OGZITndZV05sZEh4/bGJud3dmSHd3Zkh4/OE1BPT0mdz0xMDAw/JnE9ODA",
       title: "",
-      content: "First day of coding my #VibeJam project! So excited to share this journey!",
+      content: "#vibegame #vibecoding @levelsio @mrdoob Day 1 getting prompt from chatgpt, installing cursor, setting up! 🚀 #VibeCoding #VibeCodingChallenge",
       stats: {
         likes: 124,
         comments: 18,
-        date: "2 days ago"
+        date: "March 20, 2025"
       }
     },
     {
       type: "youtube" as const,
-      imageSrc: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      title: "Building a Space Game with AI - Day 5 Progress",
+      imageSrc: "https://imgs.search.brave.com/2fMhDLsZ_ZK36uo42MM7L1E6gL98hJKRKkbvbcIXf-A/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9s/YWdyYW5nZS1wb2lu/dC1vcmJpdF8xMDcx/LTEzNDcuanBnP3Np/emU9NjI2JmV4dD1q/cGc",
+      title: "Desktop demo recording of the Lagrange game",
       content: "",
       stats: {
         views: 342,
         likes: 56,
-        date: "5 days ago"
+        date: "April 2, 2025"
       }
     },
     {
       type: "linkedin" as const,
-      imageSrc: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+      imageSrc: "https://imgs.search.brave.com/QYF-PJUu2Xh_Hs5JbNghYGZbTYWGzJ9PUGeJHK4XGKM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/MjE5NzYxMzY5MzEt/YmQzMzY4ODdkMTdh/P2l4bGliPXJiLTQu/MC4zJml4aWQ9TTN3/eE1qQTNmREI4TUh4/elpXRnlZMmg4TW54/OGZHUmxjM0JoWTJs/OGZERjhmSHd3Zkh4/OE1BPT0mdz0xMDAw/JnE9ODA",
       title: "",
-      content: "Excited to share that I've completed my first game using AI-assisted development during #VibeJam! The journey taught me so much about Three.js, game mechanics, and leveraging AI tools for creative coding.\n\nWhat's your experience with AI-assisted development? I'd love to hear your thoughts!",
+      content: "Down to the last 4 hours! The struggle is real champs. Looking forward to sharing my #vibejam space physics game 'Lagrange' created with Cursor and Replit. Physics-based gameplay with actual orbital mechanics! #VibeCoding #uyar #cursor #replit #GameDev #AIInGaming",
       stats: {
         likes: 86,
         comments: 23,
-        date: "3 days ago"
+        date: "April 2, 2025"
       }
     }
   ];
@@ -219,17 +237,41 @@ export default function SocialHighlights() {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            <a href="#" className="flex items-center space-x-2 px-6 py-3 bg-[#1E1E2A] rounded-full hover:bg-[#1E1E2A]/70 transition-colors">
+            <a 
+              href="https://instagram.com/jalil.irfan" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-2 px-6 py-3 bg-[#1E1E2A] rounded-full hover:bg-[#1E1E2A]/70 transition-colors"
+            >
               <i className="fab fa-instagram text-xl text-pink-500"></i>
               <span>Follow on Instagram</span>
             </a>
-            <a href="#" className="flex items-center space-x-2 px-6 py-3 bg-[#1E1E2A] rounded-full hover:bg-[#1E1E2A]/70 transition-colors">
+            <a 
+              href="https://youtube.com/@jalil-irfan" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-2 px-6 py-3 bg-[#1E1E2A] rounded-full hover:bg-[#1E1E2A]/70 transition-colors"
+            >
               <i className="fab fa-youtube text-xl text-red-600"></i>
               <span>Subscribe on YouTube</span>
             </a>
-            <a href="#" className="flex items-center space-x-2 px-6 py-3 bg-[#1E1E2A] rounded-full hover:bg-[#1E1E2A]/70 transition-colors">
+            <a 
+              href="https://linkedin.com/in/jalil-irfan" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-2 px-6 py-3 bg-[#1E1E2A] rounded-full hover:bg-[#1E1E2A]/70 transition-colors"
+            >
               <i className="fab fa-linkedin text-xl text-blue-600"></i>
               <span>Connect on LinkedIn</span>
+            </a>
+            <a 
+              href="https://x.com/Jalil_Irfan" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-2 px-6 py-3 bg-[#1E1E2A] rounded-full hover:bg-[#1E1E2A]/70 transition-colors"
+            >
+              <i className="fab fa-twitter text-xl text-blue-400"></i>
+              <span>Follow on X (Twitter)</span>
             </a>
           </motion.div>
         </div>
