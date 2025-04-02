@@ -1,0 +1,31 @@
+Details / Content with respect to my journey of developing the game :-  My name is: Jalil Irfan
+LinkedIn: https://linkedin.com/in/jalil-irfan
+Twitter: https://x.com/Jalil_Irfan
+Instagram: https://instagram.com/jalil.irfan
+
+My game URL :- https://jalil-irfan.github.io/cursor-physicsgame/
+
+VibeJam Challenge journey that are recorded , put it up as a separate section displaying all these videos.  No need to add any special images, user/comments/like counts, show YouTube embedded videos , with small title to it 
+20 March 2025 - https://youtube.com/live/Ojz8kHUsk70. - Day 1 - getting prompt from chatgpt, installing cursor, 
+25 March 2025 - https://youtube.com/live/KDJH9YiRpuA - Day 2 - starting with cursor, creating a game ‘Fractal Drop’ with cursor , had errors , then tried the same with replit
+31 March 2025 - https://youtube.com/live/zWLUHxfet4E. - Day 3 - browser physics puzzle game with balls and movement using replit 
+01 April 2025 - https://youtu.be/KzRUtAelcMo - day 4 - Restarting with new requirement and new prompt  along with Cursor  01 April 2025 - https://youtube.com/live/cBlJ3LxWBZg - Setting up the satellite movement and controls - LagRange development - part 1 - Curosr
+01 April 2025 - https://youtu.be/WLzMej8Gnaw - Adding sponsorship - LagRange development - part 2   - Curosr
+01 April 2025 - https://youtu.be/b-GMWisrnxE - error and debugging - LagRange development - part 3 - Curosr 01 April 2025 - https://youtu.be/A0jcYg5zk7g  - Adding music player - LagRange development - part 4 - Curosr
+02 April 2025 - https://youtu.be/sB_M3uI_HP0 - Desktop demo recording of the Lagrange game    Linkedin one of the post I posted regarding the vibe jam display it as embedded and in a separate section https://www.linkedin.com/posts/jalil-irfan_vibecoding-vibejam-uyar-activity-7310201134873223168-NKK1
+ INSTAgram vibe jam posts I posted regarding the vibe jam display it as embedded and in a separate section 20 march 2025 - https://www.instagram.com/p/DHabA3gx9aO/
+2 April 2025 - https://www.instagram.com/p/DH7vMnxRY-I/
+
+
+X(twitter) posts I posted regarding the vibe jam display it as embedded and in a separate section 20 March - https://x.com/Jalil_Irfan/status/1902753608451645873 Embed code - <blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/vibegame?src=hash&amp;ref_src=twsrc%5Etfw">#vibegame</a> <a href="https://twitter.com/hashtag/vibecoding?src=hash&amp;ref_src=twsrc%5Etfw">#vibecoding</a> <a href="https://twitter.com/levelsio?ref_src=twsrc%5Etfw">@levelsio</a> <a href="https://twitter.com/mrdoob?ref_src=twsrc%5Etfw">@mrdoob</a> <a href="https://twitter.com/ID_AA_Carmack?ref_src=twsrc%5Etfw">@ID_AA_Carmack</a> <a href="https://twitter.com/hashtag/gamejam?src=hash&amp;ref_src=twsrc%5Etfw">#gamejam</a> <br>thank you for the opportunity <br><br>I have started generating a prompt <a href="https://twitter.com/hashtag/chatgpt?src=hash&amp;ref_src=twsrc%5Etfw">#chatgpt</a> <a href="https://twitter.com/ChatGPTapp?ref_src=twsrc%5Etfw">@ChatGPTapp</a> , which will then be used on a AI AGENT , like <a href="https://twitter.com/cursor_ai?ref_src=twsrc%5Etfw">@cursor_ai</a> <a href="https://twitter.com/lovable_dev?ref_src=twsrc%5Etfw">@lovable_dev</a> <a href="https://twitter.com/boltdotnew?ref_src=twsrc%5Etfw">@boltdotnew</a> <a href="https://twitter.com/Replit?ref_src=twsrc%5Etfw">@Replit</a> <a href="https://twitter.com/hashtag/uyar?src=hash&amp;ref_src=twsrc%5Etfw">#uyar</a> <a href="https://t.co/hrKjmjFkyH">https://t.co/hrKjmjFkyH</a></p>&mdash; Jalil Irfan (@Jalil_Irfan) <a href="https://twitter.com/Jalil_Irfan/status/1902753608451645873?ref_src=twsrc%5Etfw">March 20, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+2 April 2025 - https://x.com/Jalil_Irfan/status/1907152608508387614
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Down to the last 4 hours <br>The struggle is real champs<br>Looking forward for stuffs like this <a href="https://twitter.com/levelsio?ref_src=twsrc%5Etfw">@levelsio</a> <a href="https://twitter.com/karpathy?ref_src=twsrc%5Etfw">@karpathy</a> <a href="https://twitter.com/hashtag/vibejam?src=hash&amp;ref_src=twsrc%5Etfw">#vibejam</a> <a href="https://twitter.com/hashtag/uyar?src=hash&amp;ref_src=twsrc%5Etfw">#uyar</a> <a href="https://twitter.com/hashtag/vibecoding?src=hash&amp;ref_src=twsrc%5Etfw">#vibecoding</a> <a href="https://twitter.com/hashtag/aigame?src=hash&amp;ref_src=twsrc%5Etfw">#aigame</a> <a href="https://t.co/PrkYe8Gqxy">pic.twitter.com/PrkYe8Gqxy</a></p>&mdash; Jalil Irfan (@Jalil_Irfan) <a href="https://twitter.com/Jalil_Irfan/status/1907152608508387614?ref_src=twsrc%5Etfw">April 1, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  Then have a section which requests for fund / donation if they are happy with my journey and if they want to  Donate me / buy me a coffee
+Ko-FI : https://ko-fi.com/nandri
+BHIM / UPI : jalil.irfan@okaxis 
+My Ko-Fi donation link to be embedded with the webpage <iframe id='kofiframe' src='https://ko-fi.com/nandri/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;padding:4px;background:#f9f9f9;' height='712' title='nandri'></iframe> 
+
+#VibeCoding, #LiveCoding, #GameDev, #AIGameJam, #PieterLevels, #AIChallenge, #GameDevelopment, #IndieGameDev, #AIProgramming, #LiveGameDev, #AIInnovation, #AIInGaming, #PieterLevelsChallenge, #Gamers, #LiveStream, #LearnToCode, #BuildingInPublic, #IndieGame, #AIRevolution, #uyar, #cursor, #replit, #bolt, #lovable, #windsurf, #ai, #vibe, #vibecoding, #codejam, #vibejam, #vibecodejam

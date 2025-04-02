@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { LucideX, LucideTwitter, LucideFacebook, LucideLinkedin, LucideMail, LucideLink, LucideClipboard, LucideMessageSquare } from "lucide-react";
 
 interface ShareModalProps {
   isOpen: boolean;
@@ -6,7 +7,7 @@ interface ShareModalProps {
 }
 
 export default function ShareModal({ isOpen, onClose }: ShareModalProps) {
-  const shareMessage = "Check out this cool AI-built space game! #VibeJam @levelsio";
+  const shareMessage = "Follow my VibeJam journey: 16 days of creating AI-generated browser games for @levelsio's competition! #VibeJam #GameDev";
   
   const handleShare = (platform: string) => {
     let shareUrl = "";
@@ -20,17 +21,25 @@ export default function ShareModal({ isOpen, onClose }: ShareModalProps) {
         shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}&quote=${encodeURIComponent(shareMessage)}`;
         break;
       case "linkedin":
-        shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent("My First Vibe Coding Experience")}&summary=${encodeURIComponent(shareMessage)}`;
+        shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent("VibeJam Challenge Journey")}&summary=${encodeURIComponent(shareMessage)}`;
         break;
       case "whatsapp":
         shareUrl = `https://wa.me/?text=${encodeURIComponent(shareMessage + " " + currentUrl)}`;
         break;
       case "email":
-        shareUrl = `mailto:?subject=${encodeURIComponent("My First Vibe Coding Experience")}&body=${encodeURIComponent(shareMessage + "\n\n" + currentUrl)}`;
+        shareUrl = `mailto:?subject=${encodeURIComponent("VibeJam Challenge Journey")}&body=${encodeURIComponent(shareMessage + "\n\n" + currentUrl)}`;
         break;
       case "copy":
-        navigator.clipboard.writeText(shareMessage + " " + currentUrl)
-          .then(() => alert("Link copied to clipboard!"))
+        navigator.clipboard.writeText(currentUrl)
+          .then(() => {
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50';
+            toast.textContent = 'Link copied to clipboard!';
+            document.body.appendChild(toast);
+            setTimeout(() => {
+              toast.remove();
+            }, 3000);
+          })
           .catch((err) => console.error("Could not copy text: ", err));
         return;
     }
@@ -42,7 +51,15 @@ export default function ShareModal({ isOpen, onClose }: ShareModalProps) {
 
   const copyMessage = () => {
     navigator.clipboard.writeText(shareMessage)
-      .then(() => alert("Message copied to clipboard!"))
+      .then(() => {
+        const toast = document.createElement('div');
+        toast.className = 'fixed bottom-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50';
+        toast.textContent = 'Message copied to clipboard!';
+        document.body.appendChild(toast);
+        setTimeout(() => {
+          toast.remove();
+        }, 3000);
+      })
       .catch((err) => console.error("Could not copy text: ", err));
   };
 
@@ -52,8 +69,8 @@ export default function ShareModal({ isOpen, onClose }: ShareModalProps) {
   };
 
   const contentVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+    hidden: { opacity: 0, y: 20, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1 }
   };
 
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -62,9 +79,18 @@ export default function ShareModal({ isOpen, onClose }: ShareModalProps) {
     }
   };
 
+  const socialPlatforms = [
+    { id: "twitter", name: "Twitter", icon: <LucideTwitter className="w-5 h-5 md:w-6 md:h-6" />, color: "text-blue-400" },
+    { id: "facebook", name: "Facebook", icon: <LucideFacebook className="w-5 h-5 md:w-6 md:h-6" />, color: "text-blue-600" },
+    { id: "linkedin", name: "LinkedIn", icon: <LucideLinkedin className="w-5 h-5 md:w-6 md:h-6" />, color: "text-blue-700" },
+    { id: "whatsapp", name: "WhatsApp", icon: <LucideMessageSquare className="w-5 h-5 md:w-6 md:h-6" />, color: "text-green-500" },
+    { id: "email", name: "Email", icon: <LucideMail className="w-5 h-5 md:w-6 md:h-6" />, color: "text-red-400" },
+    { id: "copy", name: "Copy Link", icon: <LucideLink className="w-5 h-5 md:w-6 md:h-6" />, color: "text-purple-400" },
+  ];
+
   return (
     <motion.div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
       variants={modalVariants}
       initial="hidden"
       animate="visible"
@@ -73,92 +99,58 @@ export default function ShareModal({ isOpen, onClose }: ShareModalProps) {
       onClick={handleBackdropClick}
     >
       <motion.div 
-        className="bg-[#1E1E2A] w-full max-w-md m-4 p-6 rounded-xl"
+        className="card-glassmorphism w-full max-w-md m-4 p-6 rounded-2xl gradient-border-animated"
         variants={contentVariants}
         initial="hidden"
         animate="visible"
         exit="hidden"
-        transition={{ duration: 0.3, delay: 0.1 }}
+        transition={{ duration: 0.4, delay: 0.1 }}
       >
-        <div className="flex justify-between items-center mb-4">
-          <h3 className="text-xl font-heading font-bold">Share This Page</h3>
-          <button onClick={onClose} className="text-gray-400 hover:text-white">
-            <i className="fas fa-times"></i>
+        <div className="flex justify-between items-center mb-6">
+          <h3 className="text-xl font-heading font-bold text-gradient">Share My Journey</h3>
+          <button 
+            onClick={onClose} 
+            className="text-gray-400 hover:text-white p-1 rounded-full hover:bg-gray-800/50 transition-colors"
+            aria-label="Close"
+          >
+            <LucideX className="w-5 h-5" />
           </button>
         </div>
         
-        <p className="text-gray-300 mb-6">Share my VibeJam coding journey with your friends and network!</p>
+        <p className="text-gray-300 mb-8">Share my VibeJam coding odyssey with your friends and network!</p>
         
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
-          <motion.a 
-            className="social-share-btn flex flex-col items-center justify-center p-4 bg-[#0A0E17] rounded-lg hover:bg-[#080B13] transition-all"
-            whileHover={{ y: -3 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            onClick={() => handleShare("twitter")}
-          >
-            <i className="fab fa-twitter text-2xl text-blue-400 mb-2"></i>
-            <span className="text-sm">Twitter</span>
-          </motion.a>
-          <motion.a 
-            className="social-share-btn flex flex-col items-center justify-center p-4 bg-[#0A0E17] rounded-lg hover:bg-[#080B13] transition-all"
-            whileHover={{ y: -3 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            onClick={() => handleShare("facebook")}
-          >
-            <i className="fab fa-facebook text-2xl text-blue-600 mb-2"></i>
-            <span className="text-sm">Facebook</span>
-          </motion.a>
-          <motion.a 
-            className="social-share-btn flex flex-col items-center justify-center p-4 bg-[#0A0E17] rounded-lg hover:bg-[#080B13] transition-all"
-            whileHover={{ y: -3 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            onClick={() => handleShare("linkedin")}
-          >
-            <i className="fab fa-linkedin text-2xl text-blue-700 mb-2"></i>
-            <span className="text-sm">LinkedIn</span>
-          </motion.a>
-          <motion.a 
-            className="social-share-btn flex flex-col items-center justify-center p-4 bg-[#0A0E17] rounded-lg hover:bg-[#080B13] transition-all"
-            whileHover={{ y: -3 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            onClick={() => handleShare("whatsapp")}
-          >
-            <i className="fab fa-whatsapp text-2xl text-green-500 mb-2"></i>
-            <span className="text-sm">WhatsApp</span>
-          </motion.a>
-          <motion.a 
-            className="social-share-btn flex flex-col items-center justify-center p-4 bg-[#0A0E17] rounded-lg hover:bg-[#080B13] transition-all"
-            whileHover={{ y: -3 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            onClick={() => handleShare("email")}
-          >
-            <i className="fas fa-envelope text-2xl text-red-500 mb-2"></i>
-            <span className="text-sm">Email</span>
-          </motion.a>
-          <motion.a 
-            className="social-share-btn flex flex-col items-center justify-center p-4 bg-[#0A0E17] rounded-lg hover:bg-[#080B13] transition-all"
-            whileHover={{ y: -3 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            onClick={() => handleShare("copy")}
-          >
-            <i className="fas fa-link text-2xl text-purple-500 mb-2"></i>
-            <span className="text-sm">Copy Link</span>
-          </motion.a>
+        <div className="grid grid-cols-3 gap-4 mb-8">
+          {socialPlatforms.map((platform) => (
+            <motion.button 
+              key={platform.id}
+              className="social-share-btn flex flex-col items-center justify-center p-4 bg-[rgba(10,14,23,0.5)] rounded-xl hover:bg-[rgba(20,30,50,0.5)] transition-all space-y-2"
+              whileHover={{ y: -3, backgroundColor: "rgba(30,40,70,0.5)" }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              onClick={() => handleShare(platform.id)}
+            >
+              <div className={`${platform.color}`}>
+                {platform.icon}
+              </div>
+              <span className="text-xs md:text-sm">{platform.name}</span>
+            </motion.button>
+          ))}
         </div>
         
         <div className="relative">
-          <input 
-            type="text" 
-            value={shareMessage} 
-            className="w-full bg-[#0A0E17] border border-gray-700 rounded-lg px-4 py-2 text-gray-300" 
-            readOnly
-          />
+          <div className="p-3 bg-[rgba(10,14,23,0.5)] border border-[rgba(138,43,226,0.3)] rounded-xl text-gray-200 text-sm">
+            {shareMessage}
+          </div>
           <button 
             onClick={copyMessage}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 text-sm text-[#00F0FF] hover:text-[#6E2CF4] transition-colors"
+            className="absolute right-3 bottom-3 text-sm text-[#40E0D0] hover:text-[#8A2BE2] transition-colors flex items-center space-x-1"
           >
-            Copy
+            <LucideClipboard className="w-4 h-4" />
+            <span>Copy</span>
           </button>
+        </div>
+        
+        <div className="mt-6 pt-6 border-t border-gray-800 text-center">
+          <p className="text-sm text-gray-400">Thanks for helping spread the word about my VibeJam journey!</p>
         </div>
       </motion.div>
     </motion.div>
