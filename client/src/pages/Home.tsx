@@ -10,9 +10,13 @@ import MediaGallery from "@/components/MediaGallery";
 import Footer from "@/components/Footer";
 import ShareModal from "@/components/ShareModal";
 import Lightbox from "@/components/Lightbox";
+import TestComponent from "@/components/TestComponent";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
+  // For diagnostic purposes, let's use the test component
+  const useTestComponent = true;
+
   const [showShareModal, setShowShareModal] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -44,6 +48,10 @@ export default function Home() {
   const closeLightbox = () => {
     setLightboxImage(null);
   };
+
+  if (useTestComponent) {
+    return <TestComponent />;
+  }
 
   return (
     <motion.div
