@@ -88,3 +88,148 @@
   transform: translateY(-3px);
   transition: all 0.3s ease;
 }
+
+/* 3D and space theme styles */
+.star {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  animation: twinkle 4s infinite ease-in-out;
+}
+
+.star-small {
+  width: 1px;
+  height: 1px;
+  animation-duration: 3s;
+}
+
+.star-medium {
+  width: 2px;
+  height: 2px;
+  animation-duration: 5s;
+  background-color: #f0f0ff;
+}
+
+.star-large {
+  width: 3px;
+  height: 3px;
+  animation-duration: 7s;
+  background-color: #e0e0ff;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+/* Nebula styling */
+.nebula {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+  pointer-events: none;
+  transition: all 5s ease-in-out;
+}
+
+/* Satellite styling */
+.satellite-container {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease-out;
+  filter: drop-shadow(0 0 10px rgba(110, 44, 244, 0.6));
+}
+
+.satellite {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  transform-style: preserve-3d;
+}
+
+.satellite-body {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  background: linear-gradient(to bottom, #888, #444);
+  border-radius: 10px;
+  left: 20px;
+  top: 10px;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(110, 44, 244, 0.5);
+}
+
+.satellite-panel {
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  background: linear-gradient(to bottom, #6E2CF4, #3b1782);
+  border: 1px solid #888;
+  top: 15px;
+}
+
+.satellite-panel.left {
+  left: -20px;
+  transform: skew(0deg, -10deg);
+}
+
+.satellite-panel.right {
+  right: -20px;
+  transform: skew(0deg, 10deg);
+}
+
+.satellite-dish {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #888;
+  border-radius: 50%;
+  top: 0;
+  left: 42px;
+  border: 1px solid #666;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.satellite-shadow {
+  filter: drop-shadow(0 0 15px rgba(110, 44, 244, 0.8));
+}
+
+/* Canvas styling */
+.three-canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.three-canvas-interactive {
+  pointer-events: auto;
+}
+
+.parallax-layer {
+  will-change: transform;
+}
+
+.space-glow {
+  box-shadow: 0 0 15px rgba(110, 44, 244, 0.6),
+              0 0 30px rgba(0, 240, 255, 0.3);
+}
+
+/* Space-themed button styles */
+.space-button {
+  background: rgba(110, 44, 244, 0.2);
+  border: 1px solid rgba(110, 44, 244, 0.5);
+  box-shadow: 0 0 10px rgba(110, 44, 244, 0.3);
+  transition: all 0.3s ease;
+}
+
+.space-button:hover {
+  background: rgba(110, 44, 244, 0.4);
+  box-shadow: 0 0 15px rgba(110, 44, 244, 0.5);
+}

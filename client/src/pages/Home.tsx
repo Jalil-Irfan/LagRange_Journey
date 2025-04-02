@@ -10,8 +10,8 @@ import MediaGallery from "@/components/MediaGallery";
 import Footer from "@/components/Footer";
 import ShareModal from "@/components/ShareModal";
 import Lightbox from "@/components/Lightbox";
-import TestComponent from "@/components/TestComponent";
 import { motion, AnimatePresence } from "framer-motion";
+import ParallaxBackground from "@/components/ParallaxBackground";
 
 export default function Home() {
   const [showShareModal, setShowShareModal] = useState(false);
@@ -51,24 +51,52 @@ export default function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
+      className="relative"
     >
-      <div className="progress-bar" style={{ width: `${scrollProgress}%` }} />
+      {/* Space Background with Parallax Effects */}
+      <ParallaxBackground onSatelliteClick={toggleShareModal}>
+        <div className="progress-bar" style={{ width: `${scrollProgress}%` }} />
+        
+        <Navbar 
+          showMobileMenu={showMobileMenu} 
+          toggleMobileMenu={toggleMobileMenu}
+          toggleShareModal={toggleShareModal}
+        />
+        
+        <section data-speed="0.2">
+          <Hero toggleShareModal={toggleShareModal} />
+        </section>
+        
+        <section data-speed="0.1">
+          <Journey />
+        </section>
+        
+        <section data-speed="0.15">
+          <BuildStory />
+        </section>
+        
+        <section data-speed="0.05">
+          <SocialHighlights />
+        </section>
+        
+        <section data-speed="0.1">
+          <GameSection toggleShareModal={toggleShareModal} />
+        </section>
+        
+        <section data-speed="0.15">
+          <Reflection />
+        </section>
+        
+        <section data-speed="0.05">
+          <MediaGallery openLightbox={openLightbox} />
+        </section>
+        
+        <section>
+          <Footer toggleShareModal={toggleShareModal} />
+        </section>
+      </ParallaxBackground>
       
-      <Navbar 
-        showMobileMenu={showMobileMenu} 
-        toggleMobileMenu={toggleMobileMenu}
-        toggleShareModal={toggleShareModal}
-      />
-      
-      <Hero toggleShareModal={toggleShareModal} />
-      <Journey />
-      <BuildStory />
-      <SocialHighlights />
-      <GameSection toggleShareModal={toggleShareModal} />
-      <Reflection />
-      <MediaGallery openLightbox={openLightbox} />
-      <Footer toggleShareModal={toggleShareModal} />
-      
+      {/* Modals */}
       <AnimatePresence>
         {showShareModal && (
           <ShareModal isOpen={showShareModal} onClose={() => setShowShareModal(false)} />
