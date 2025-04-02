@@ -1,0 +1,41 @@
+Prompt: Build a Personal Vibe Coding Showcase Page
+
+You are a top-tier full-stack UI developer and personal brand strategist. Create a modern, responsive personal webpage using HTML, CSS (Tailwind preferred), and JavaScript. Use advanced UI/UX, smooth animations, clean layout, and social sharing integration.
+
+Goal:
+
+To share my first Vibe Coding journey — attract traffic, gain subscribers, and promote my game and social media posts.
+
+Page Structure:
+	1.	Hero Section
+	•	Title: “My First Vibe Coding Experience”
+	•	Subtitle: Short inspiring line (e.g., “Built with AI. Powered by Curiosity.”)
+	•	Call-to-Action button: “Play My Game” (anchor to iframe or external game link)
+	2.	My Journey (Gist)
+	•	A short paragraph about how I started, tools used (ChatGPT, Three.js, Replit), and what I learned.
+	3.	Build Story (with timeline or animated cards)
+	•	Include captions + display images, screenshots, or short videos from local files or cloud.
+	•	Add hover animations or scroll effects for storytelling feel.
+	4.	Social Highlights
+	•	Embed or link to Instagram Reels, YouTube Shorts, LinkedIn posts using iframes or preview cards.
+	•	Add “Like / View on Instagram / YouTube” buttons with native platform branding.
+	5.	Play the Game
+	•	Embed the game using an <iframe>
+	•	Responsive layout for mobile + desktop
+	•	Optional: “Play in Fullscreen” button
+	6.	Reflection Section
+	•	A clean paragraph with subtle animation on scroll (fade-in or parallax)
+	7.	Media Gallery
+	•	Display all images/videos from local folders in a grid layout with lightbox-style popup.
+	8.	Social Share CTA (Top + Middle + Bottom)
+	•	Buttons to share this page via WhatsApp, Twitter, LinkedIn, Facebook, SMS
+	•	Add preset message: “Check out this cool AI-built space game! #VibeJam @levelsio”
+
+Other Instructions:
+	•	Use dark modern space theme with clean fonts (Inter, Poppins, or similar)
+	•	Add smooth scroll, scroll-triggered animations (Framer Motion or similar)
+	•	Sticky nav with section anchors
+	•	Mobile-first, fast loading
+	•	Keep everything modular and readable
+	•	Optimize for SEO and social previews (OpenGraph, Twitter Cards)	•	Add “Made for #VibeJam” badge or tag
+	•	Add “Subscribe to my channel” or “Follow me” buttons with icons

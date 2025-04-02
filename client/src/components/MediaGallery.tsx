@@ -33,38 +33,19 @@ export default function MediaGallery({ openLightbox }: MediaGalleryProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.1 });
   
+  // Using only user-provided images as requested
   const galleryItems = [
     {
-      imageSrc: "https://images.unsplash.com/photo-1518365050014-70fe7232897f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      title: "Early concept art"
+      imageSrc: "/images/Screenshot 2025-04-01 at 2.36.17 PM.png",
+      title: "LagRange Game Development"
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1601944179066-29b8f7e29c3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      title: "Spaceship modeling"
+      imageSrc: "/images/Screenshot 2025-04-01 at 3.49.21 PM.png",
+      title: "Physics Game Testing"
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      title: "Level design"
-    },
-    {
-      imageSrc: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      title: "Gameplay testing"
-    },
-    {
-      imageSrc: "https://images.unsplash.com/photo-1581822261290-991b38693d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      title: "Debugging session"
-    },
-    {
-      imageSrc: "https://images.unsplash.com/photo-1518136247453-74e7b5265980?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      title: "Final gameplay"
-    },
-    {
-      imageSrc: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      title: "Code review"
-    },
-    {
-      imageSrc: "https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      title: "Community feedback"
+      imageSrc: "/images/Screenshot 2025-03-25 at 1.30.15 PM.png",
+      title: "Development Environment"
     }
   ];
 
@@ -79,7 +60,7 @@ export default function MediaGallery({ openLightbox }: MediaGalleryProps) {
           Explore screenshots, concept art, and development progress from my VibeJam journey.
         </p>
         
-        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {isInView && galleryItems.map((item, index) => (
             <GalleryItem 
               key={index}

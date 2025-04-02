@@ -67,40 +67,40 @@ export default function BuildStory() {
   const timelineData = [
     {
       day: "Day 1",
-      title: "Starting with an Idea",
-      description: "The journey began with brainstorming and research. I explored different game concepts and decided on a space shooter with a twist.",
-      icon: "fas fa-lightbulb",
-      iconColor: "purple",
-      imageSrc: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      imageAlt: "Brainstorming session"
+      title: "Paper Plane Game",
+      description: "Started the VibeJam challenge by creating a simple 2D paper plane game where players guide a plane through obstacles. Used Cursor AI to help write the basic physics for the plane movement.",
+      icon: "fas fa-paper-plane",
+      iconColor: "cyan",
+      imageSrc: "https://imgs.search.brave.com/yWQBcuRf9NtuvGbQBeiRFGMc5gAJ0wm8DdxKh_zTu6c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/MzI2MTYzMjI0MDIt/OWE2MWVhNTI3NWVm/P2l4bGliPXJiLTQu/MC4zJml4aWQ9TW53/eE1qQTNmREI4TUh4/elpXRnlZMmg4T1h4/OGNHRndaWEpmY0d4/aGJtVjhmR1Z1Zkh3/d2ZId3dmSHd3Jnc9/MTAwMCZxPTgw",
+      imageAlt: "Paper Plane Game"
     },
     {
-      day: "Day 3",
-      title: "Learning Three.js Basics",
-      description: "Diving into Three.js documentation, I experimented with creating 3D objects and understanding the rendering pipeline.",
-      icon: "fas fa-book",
-      iconColor: "cyan",
-      imageSrc: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      imageAlt: "Learning code",
+      day: "Day 2",
+      title: "Fractal Drop",
+      description: "Built Fractal Drop, a hypnotic endless runner where players navigate through procedurally generated fractal patterns. ChatGPT and Cursor helped with the fractal generation algorithms.",
+      icon: "fas fa-square-root-alt",
+      iconColor: "purple",
+      imageSrc: "https://imgs.search.brave.com/QYF-PJUu2Xh_Hs5JbNghYGZbTYWGzJ9PUGeJHK4XGKM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/MjE5NzYxMzY5MzEt/YmQzMzY4ODdkMTdh/P2l4bGliPXJiLTQu/MC4zJml4aWQ9TTN3/eE1qQTNmREI4TUh4/elpXRnlZMmg4TW54/OGZHUmxjM0JoWTJs/OGZERjhmSHd3Zkh4/OE1BPT0mdz0xMDAw/JnE9ODA",
+      imageAlt: "Fractal Drop Game",
       isRight: true
     },
     {
-      day: "Day 7",
-      title: "First Playable Prototype",
-      description: "After a week of coding and testing, I had a basic prototype with ship movement and simple asteroid obstacles.",
-      icon: "fas fa-rocket",
-      iconColor: "purple",
-      imageSrc: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      imageAlt: "Game prototype"
+      day: "Day 3",
+      title: "Physics Game Experiments",
+      description: "Experimented with a physics-based game that became the foundation for LagRange. Explored Three.js and gravity simulations with help from Replit's collaborative features.",
+      icon: "fas fa-atom",
+      iconColor: "cyan",
+      imageSrc: "https://imgs.search.brave.com/8qIGUTxXlJKZN57vM0zqj1NrKNAYVXdkl-cYrZt-MQo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE0/NDY3NzY3MDk5ODQt/MWI3M2Y2NjRjYzVk/P2l4bGliPXJiLTQu/MC4zJml4aWQ9TW53/eE1qQTNmREI4TUh4/elpXRnlZMmg4TW54/OGMyTnBaVzVqWlh4/bGJud3dmSHd3Zkh3/OCZ3PTEwMDAmcT04/MA",
+      imageAlt: "Physics Game Experiments"
     },
     {
-      day: "Day 14",
-      title: "Launch Day",
-      description: "The final touches were added - sound effects, score tracking, and difficulty progression. Time to share with the world!",
-      icon: "fas fa-flag-checkered",
-      iconColor: "cyan",
-      imageSrc: "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-      imageAlt: "Launch celebration",
+      day: "April 1 - Day 5",
+      title: "LagRange - The Final Game",
+      description: "Started and completed LagRange in a single day! A space physics game with actual orbital mechanics where players navigate satellites through orbital challenges. Built with Cursor and Replit's powerful tools.",
+      icon: "fas fa-satellite",
+      iconColor: "purple",
+      imageSrc: "https://imgs.search.brave.com/2fMhDLsZ_ZK36uo42MM7L1E6gL98hJKRKkbvbcIXf-A/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9s/YWdyYW5nZS1wb2lu/dC1vcmJpdF8xMDcx/LTEzNDcuanBnP3Np/emU9NjI2JmV4dD1q/cGc",
+      imageAlt: "LagRange Game",
       isRight: true
     }
   ];

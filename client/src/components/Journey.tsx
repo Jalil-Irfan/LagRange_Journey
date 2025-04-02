@@ -25,7 +25,7 @@ export default function Journey() {
   };
 
   return (
-    <section id="journey" className="py-20 bg-[#0A0E17]">
+    <section id="journey" className="pt-8 pb-20 bg-[#0A0E17]">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-[#6E2CF4] to-[#00F0FF]">
@@ -43,7 +43,7 @@ export default function Journey() {
               className="p-6 bg-[#1E1E2A] rounded-xl shadow-xl mb-10"
             >
               <p className="text-lg leading-relaxed mb-6">
-                My coding adventure began with a simple curiosity about AI-assisted development. Using ChatGPT as my guide, I dove into the world of Three.js to create an immersive space game. The journey wasn't always smooth—I faced challenges with 3D rendering and game logic—but the Replit environment made iterations quick and collaborative.
+                My coding adventure began with a simple curiosity about AI-assisted development. Using ChatGPT and Cursor as my guides, I dove into the world of Three.js to create an immersive space game. The journey wasn't always smooth—I faced challenges with 3D rendering and game logic—but the Replit environment made iterations quick and collaborative.
               </p>
               <p className="text-lg leading-relaxed">
                 What started as an experiment turned into a passionate project that taught me about the intersection of AI assistance and human creativity. I discovered that the right tools can accelerate learning and enable even beginners to build impressive interactive experiences.
@@ -58,6 +58,14 @@ export default function Journey() {
                 <i className="fas fa-robot text-3xl text-[#6E2CF4] mb-2"></i>
                 <span className="block font-medium">ChatGPT</span>
                 <span className="text-sm text-gray-400">AI Assistant</span>
+              </motion.div>
+              <motion.div 
+                variants={itemVariants}
+                className="bg-[#1E1E2A] p-4 rounded-lg text-center w-32 h-32 flex flex-col items-center justify-center"
+              >
+                <i className="fas fa-edit text-3xl text-[#F9CB28] mb-2"></i>
+                <span className="block font-medium">Cursor</span>
+                <span className="text-sm text-gray-400">AI Code Editor</span>
               </motion.div>
               <motion.div 
                 variants={itemVariants}

@@ -6,15 +6,10 @@ interface SocialCardProps {
   imageSrc: string;
   title: string;
   content: string;
-  stats: {
-    likes?: number;
-    comments?: number;
-    views?: number;
-    date: string;
-  };
+  date: string;
 }
 
-function SocialCard({ type, imageSrc, title, content, stats }: SocialCardProps) {
+function SocialCard({ type, imageSrc, title, content, date }: SocialCardProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.2 });
   
@@ -41,25 +36,14 @@ function SocialCard({ type, imageSrc, title, content, stats }: SocialCardProps) 
             <img src={imageSrc} alt="Instagram content" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
               <div className="p-4">
-                <div className="flex items-center mb-2">
-                  <img src="https://imgs.search.brave.com/xoJlXN3BoMufCgFbjC2-7P2FYMUMvllzbdHMm6L2TIM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL3RodW1icy81/ODQ1ZTM1OGNlZjEw/MTRjMGI1ZTM4NjUu/cG5n" alt="Profile" className="w-8 h-8 rounded-full mr-2" />
-                  <span className="font-medium">jalil.irfan</span>
-                </div>
                 <p className="text-sm">{content}</p>
               </div>
             </div>
           </div>
           <div className="p-4">
             <div className="flex justify-between mb-4">
-              <div className="flex space-x-3">
-                <button className="text-gray-400 hover:text-[#FF2D92] transition-colors">
-                  <i className="far fa-heart"></i> {stats.likes}
-                </button>
-                <button className="text-gray-400 hover:text-gray-300 transition-colors">
-                  <i className="far fa-comment"></i> {stats.comments}
-                </button>
-              </div>
-              <span className="text-gray-500 text-sm">{stats.date}</span>
+              <span className="font-medium">@jalil.irfan</span>
+              <span className="text-gray-500 text-sm">{date}</span>
             </div>
             <a 
               href="https://www.instagram.com/p/DHabA3gx9aO/" 
@@ -85,21 +69,13 @@ function SocialCard({ type, imageSrc, title, content, stats }: SocialCardProps) 
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
               <div>
                 <h3 className="font-medium">{title}</h3>
-                <p className="text-sm text-gray-400">Jalil Irfan</p>
               </div>
             </div>
           </div>
           <div className="p-4">
             <div className="flex justify-between mb-4">
-              <div className="flex space-x-3">
-                <div className="text-gray-400">
-                  <i className="far fa-eye"></i> {stats.views} views
-                </div>
-                <div className="text-gray-400">
-                  <i className="far fa-thumbs-up"></i> {stats.likes}
-                </div>
-              </div>
-              <span className="text-gray-500 text-sm">{stats.date}</span>
+              <span className="font-medium">Jalil Irfan</span>
+              <span className="text-gray-500 text-sm">{date}</span>
             </div>
             <a 
               href="https://youtu.be/sB_M3uI_HP0" 
@@ -115,12 +91,9 @@ function SocialCard({ type, imageSrc, title, content, stats }: SocialCardProps) 
       
       {type === "linkedin" && (
         <div className="p-6">
-          <div className="flex items-center mb-4">
-            <img src="https://imgs.search.brave.com/xoJlXN3BoMufCgFbjC2-7P2FYMUMvllzbdHMm6L2TIM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMuc3RpY2twbmcu/Y29tL3RodW1icy81/ODQ1ZTM1OGNlZjEw/MTRjMGI1ZTM4NjUu/cG5n" alt="Profile" className="w-12 h-12 rounded-full mr-3" />
-            <div>
-              <h3 className="font-medium">Jalil Irfan</h3>
-              <p className="text-sm text-gray-400">Software Developer | Game Designer | AI Enthusiast</p>
-            </div>
+          <div className="flex justify-between mb-4">
+            <span className="font-medium">Jalil Irfan</span>
+            <span className="text-gray-500 text-sm">{date}</span>
           </div>
           <div className="mb-4">
             <p className="text-gray-300">{content}</p>
@@ -129,20 +102,6 @@ function SocialCard({ type, imageSrc, title, content, stats }: SocialCardProps) 
             </div>
           </div>
           <img src={imageSrc} alt="LinkedIn post image" className="w-full h-48 object-cover rounded-lg mb-4" />
-          <div className="flex justify-between mb-4">
-            <div className="flex space-x-1 items-center text-sm">
-              <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
-                <i className="fas fa-thumbs-up"></i>
-              </span>
-              <span className="bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
-                <i className="fas fa-heart"></i>
-              </span>
-              <span className="text-gray-400">{stats.likes}</span>
-            </div>
-            <div className="text-gray-400 text-sm">
-              <span>{stats.comments} comments</span>
-            </div>
-          </div>
           <a 
             href="https://www.linkedin.com/posts/jalil-irfan_vibecoding-vibejam-uyar-activity-7310201134873223168-NKK1" 
             target="_blank" 
@@ -164,33 +123,21 @@ export default function SocialHighlights() {
       imageSrc: "https://imgs.search.brave.com/AjKJu7iQjbZVk7C1sNTJ_FTqLXrR1MuCYU94wGzHw_s/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/MzE3NDYxMzM0ODkt/MzVjZWU5MWRhNTQ0/P2l4bGliPXJiLTQu/MC4zJml4aWQ9TTN3/eE1qQTNmREI4TUh4/elpXRnlZMmg4TVRk/OGZITndZV05sZEh4/bGJud3dmSHd3Zkh4/OE1BPT0mdz0xMDAw/JnE9ODA",
       title: "",
       content: "#vibegame #vibecoding @levelsio @mrdoob Day 1 getting prompt from chatgpt, installing cursor, setting up! 🚀 #VibeCoding #VibeCodingChallenge",
-      stats: {
-        likes: 124,
-        comments: 18,
-        date: "March 20, 2025"
-      }
+      date: "March 20, 2025"
     },
     {
       type: "youtube" as const,
       imageSrc: "https://imgs.search.brave.com/2fMhDLsZ_ZK36uo42MM7L1E6gL98hJKRKkbvbcIXf-A/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9s/YWdyYW5nZS1wb2lu/dC1vcmJpdF8xMDcx/LTEzNDcuanBnP3Np/emU9NjI2JmV4dD1q/cGc",
       title: "Desktop demo recording of the Lagrange game",
       content: "",
-      stats: {
-        views: 342,
-        likes: 56,
-        date: "April 2, 2025"
-      }
+      date: "April 2, 2025"
     },
     {
       type: "linkedin" as const,
       imageSrc: "https://imgs.search.brave.com/QYF-PJUu2Xh_Hs5JbNghYGZbTYWGzJ9PUGeJHK4XGKM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/MjE5NzYxMzY5MzEt/YmQzMzY4ODdkMTdh/P2l4bGliPXJiLTQu/MC4zJml4aWQ9TTN3/eE1qQTNmREI4TUh4/elpXRnlZMmg4TW54/OGZHUmxjM0JoWTJs/OGZERjhmSHd3Zkh4/OE1BPT0mdz0xMDAw/JnE9ODA",
       title: "",
       content: "Down to the last 4 hours! The struggle is real champs. Looking forward to sharing my #vibejam space physics game 'Lagrange' created with Cursor and Replit. Physics-based gameplay with actual orbital mechanics! #VibeCoding #uyar #cursor #replit #GameDev #AIInGaming",
-      stats: {
-        likes: 86,
-        comments: 23,
-        date: "April 2, 2025"
-      }
+      date: "April 2, 2025"
     }
   ];
 
@@ -225,7 +172,7 @@ export default function SocialHighlights() {
               imageSrc={item.imageSrc}
               title={item.title}
               content={item.content}
-              stats={item.stats}
+              date={item.date}
             />
           ))}
         </div>
