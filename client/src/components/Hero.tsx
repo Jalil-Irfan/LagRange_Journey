@@ -74,13 +74,13 @@ export default function Hero({ toggleShareModal }: HeroProps) {
             </motion.a>
           </div>
           
+          {/* Scroll down indicator with no text */}
           <motion.div 
             className="mt-12"
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           >
             <a href="#journey" className="text-white/70 inline-block hover:text-white group">
-              <span className="block mb-2">Scroll to explore the cosmos</span>
               <motion.div
                 className="inline-block bg-gradient-to-r from-[#6E2CF4] to-[#00F0FF] p-3 rounded-full"
                 animate={{ y: [0, 10, 0] }}

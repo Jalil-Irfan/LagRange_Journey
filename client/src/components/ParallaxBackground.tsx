@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useIsMobile } from '../hooks/use-mobile';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +16,7 @@ export default function ParallaxBackground({ children, onSatelliteClick }: Paral
   const satelliteRef = useRef<HTMLDivElement>(null);
   const nebulaRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
     // Add stars to the background
@@ -25,7 +27,9 @@ export default function ParallaxBackground({ children, onSatelliteClick }: Paral
       starsContainer.innerHTML = '';
       
       // Create random stars with three different sizes
-      for (let i = 0; i < 350; i++) {
+      // Reduce number of stars on mobile for performance
+      const starCount = isMobile ? 150 : 350;
+      for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
         const starSize = Math.random();
         
@@ -58,21 +62,23 @@ export default function ParallaxBackground({ children, onSatelliteClick }: Paral
       nebulaContainer.innerHTML = '';
       
       // Add purple nebulas/clouds
-      for (let i = 0; i < 4; i++) {
+      // Reduce number of nebulas on mobile
+      const nebulaCount = isMobile ? 2 : 4;
+      for (let i = 0; i < nebulaCount; i++) {
         const nebula = document.createElement('div');
         nebula.classList.add('nebula');
         
-        // Size and position
-        const size = 30 + Math.random() * 50;
+        // Size and position - smaller on mobile
+        const size = isMobile ? (20 + Math.random() * 30) : (30 + Math.random() * 50);
         nebula.style.width = `${size}vw`;
         nebula.style.height = `${size}vw`;
         nebula.style.top = `${Math.random() * 100}%`;
         nebula.style.left = `${Math.random() * 100}%`;
         
-        // Colors
-        const opacity = 0.05 + Math.random() * 0.15;
+        // Colors - less intense on mobile
+        const opacity = isMobile ? (0.03 + Math.random() * 0.1) : (0.05 + Math.random() * 0.15);
         nebula.style.backgroundColor = `rgba(110, 44, 244, ${opacity})`;
-        nebula.style.filter = `blur(${10 + Math.random() * 50}px)`;
+        nebula.style.filter = `blur(${isMobile ? (5 + Math.random() * 30) : (10 + Math.random() * 50)}px)`;
         nebula.style.borderRadius = '50%';
         
         // Add to the container
@@ -80,7 +86,7 @@ export default function ParallaxBackground({ children, onSatelliteClick }: Paral
       }
     }
     
-    // Satellite animation
+    // Satellite animation - smoother on mobile
     if (satelliteRef.current) {
       gsap.to(satelliteRef.current, {
         rotation: 360,
@@ -89,36 +95,55 @@ export default function ParallaxBackground({ children, onSatelliteClick }: Paral
         ease: "none"
       });
       
-      // Make the satellite move on scroll
-      gsap.to(satelliteRef.current, {
-        y: window.innerHeight * 0.8,
-        x: window.innerWidth * 0.3,
-        scale: 0.8,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: true
-        }
-      });
+      // Make the satellite movement less aggressive on mobile
+      if (isMobile) {
+        // Fixed position for mobile that doesn't move much with scroll
+        gsap.to(satelliteRef.current, {
+          y: window.innerHeight * 0.2,
+          x: window.innerWidth * 0.1,
+          scale: 0.6,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1.5 // Smoother scrubbing on mobile
+          }
+        });
+      } else {
+        // Desktop behavior
+        gsap.to(satelliteRef.current, {
+          y: window.innerHeight * 0.8,
+          x: window.innerWidth * 0.3,
+          scale: 0.8,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true
+          }
+        });
+      }
     }
     
     if (containerRef.current) {
       // Create parallax effect for elements with data-speed attribute
+      // Make parallax less intense on mobile
       const elements = containerRef.current.querySelectorAll<HTMLElement>('[data-speed]');
       
       elements.forEach((element) => {
         const speed = element.getAttribute('data-speed');
         
         if (speed) {
+          const effectSpeed = isMobile ? parseFloat(speed) * 0.3 : parseFloat(speed);
+          
           gsap.to(element, {
-            y: (i, el) => -parseFloat(speed) * (ScrollTrigger.maxScroll(window) - el.offsetTop),
+            y: (i, el) => -effectSpeed * (ScrollTrigger.maxScroll(window) - el.offsetTop),
             ease: 'none',
             scrollTrigger: {
               trigger: element,
               start: 'top bottom',
               end: 'bottom top',
-              scrub: true,
+              scrub: isMobile ? 1.5 : true, // Smoother on mobile
               invalidateOnRefresh: true
             }
           });
@@ -136,7 +161,7 @@ export default function ParallaxBackground({ children, onSatelliteClick }: Paral
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isMobile]);
   
   return (
     <div className="relative w-full h-full overflow-hidden bg-black" ref={containerRef}>
@@ -152,14 +177,17 @@ export default function ParallaxBackground({ children, onSatelliteClick }: Paral
         className="fixed inset-0 z-0 pointer-events-none"
       />
       
-      {/* CSS-based satellite */}
+      {/* CSS-based satellite - adjusted for better mobile positioning */}
       <div 
         ref={satelliteRef} 
         className="fixed z-10 satellite-container cursor-pointer hover:satellite-shadow"
         style={{ 
-          top: '15%', 
-          right: '10%',
-          transform: `rotate(${scrollPosition * 360}deg)`
+          top: isMobile ? '10%' : '15%', 
+          right: isMobile ? '5%' : '10%',
+          // Less rotation on mobile for better performance
+          transform: `rotate(${isMobile ? scrollPosition * 180 : scrollPosition * 360}deg)`,
+          // Smaller on mobile
+          scale: isMobile ? 0.6 : 1
         }}
         onClick={onSatelliteClick}
         title="Click me to share!"

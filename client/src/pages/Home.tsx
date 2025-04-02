@@ -7,6 +7,8 @@ import SocialHighlights from "@/components/SocialHighlights";
 import GameSection from "@/components/GameSection";
 import Reflection from "@/components/Reflection";
 import MediaGallery from "@/components/MediaGallery";
+import YouTubeTimeline from "@/components/YouTubeTimeline";
+import DonateSection from "@/components/DonateSection";
 import Footer from "@/components/Footer";
 import ShareModal from "@/components/ShareModal";
 import Lightbox from "@/components/Lightbox";
@@ -89,6 +91,14 @@ export default function Home() {
         
         <section data-speed="0.05">
           <MediaGallery openLightbox={openLightbox} />
+        </section>
+        
+        <section data-speed="0.1">
+          <YouTubeTimeline />
+        </section>
+        
+        <section data-speed="0.05">
+          <DonateSection />
         </section>
         
         <section>

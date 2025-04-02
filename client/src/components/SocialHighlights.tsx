@@ -32,13 +32,14 @@ function SocialCard({ type, imageSrc, title, content, date }: SocialCardProps) {
     >
       {type === "instagram" && (
         <>
-          <div className="h-64 bg-gray-800 relative">
-            <img src={imageSrc} alt="Instagram content" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-              <div className="p-4">
-                <p className="text-sm">{content}</p>
-              </div>
-            </div>
+          <div className="h-[450px] bg-gray-800 relative">
+            <iframe
+              src="https://www.instagram.com/p/DHabA3gx9aO/embed"
+              className="w-full h-full"
+              frameBorder="0"
+              scrolling="no"
+              allowFullScreen
+            ></iframe>
           </div>
           <div className="p-4">
             <div className="flex justify-between mb-4">
@@ -60,17 +61,14 @@ function SocialCard({ type, imageSrc, title, content, date }: SocialCardProps) {
       {type === "youtube" && (
         <>
           <div className="h-64 bg-gray-800 relative">
-            <img src={imageSrc} alt="YouTube thumbnail" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 rounded-full bg-red-600/80 flex items-center justify-center cursor-pointer">
-                <i className="fas fa-play text-white text-xl"></i>
-              </div>
-            </div>
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-              <div>
-                <h3 className="font-medium">{title}</h3>
-              </div>
-            </div>
+            <iframe 
+              src="https://www.youtube.com/embed/sB_M3uI_HP0" 
+              title="Desktop demo recording of the Lagrange game"
+              className="w-full h-full" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            ></iframe>
           </div>
           <div className="p-4">
             <div className="flex justify-between mb-4">
@@ -90,26 +88,31 @@ function SocialCard({ type, imageSrc, title, content, date }: SocialCardProps) {
       )}
       
       {type === "linkedin" && (
-        <div className="p-6">
-          <div className="flex justify-between mb-4">
-            <span className="font-medium">Jalil Irfan</span>
-            <span className="text-gray-500 text-sm">{date}</span>
+        <div>
+          <div className="h-[450px] bg-gray-800 relative">
+            <iframe
+              src="https://www.linkedin.com/embed/feed/update/urn:li:share:7310201134873223168"
+              height="450"
+              width="100%"
+              frameBorder="0"
+              allowFullScreen
+              title="Embedded LinkedIn Post"
+            ></iframe>
           </div>
-          <div className="mb-4">
-            <p className="text-gray-300">{content}</p>
-            <div className="mt-3">
-              <span className="text-sm text-[#00F0FF]">#GameDevelopment #AI #VibeJam #Coding</span>
+          <div className="p-4">
+            <div className="flex justify-between mb-4">
+              <span className="font-medium">Jalil Irfan</span>
+              <span className="text-gray-500 text-sm">{date}</span>
             </div>
+            <a 
+              href="https://www.linkedin.com/posts/jalil-irfan_vibecoding-vibejam-uyar-activity-7310201134873223168-NKK1" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center justify-center hover:bg-blue-700 transition-colors"
+            >
+              <i className="fab fa-linkedin mr-2"></i> View on LinkedIn
+            </a>
           </div>
-          <img src={imageSrc} alt="LinkedIn post image" className="w-full h-48 object-cover rounded-lg mb-4" />
-          <a 
-            href="https://www.linkedin.com/posts/jalil-irfan_vibecoding-vibejam-uyar-activity-7310201134873223168-NKK1" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center justify-center hover:bg-blue-700 transition-colors"
-          >
-            <i className="fab fa-linkedin mr-2"></i> View on LinkedIn
-          </a>
         </div>
       )}
     </motion.div>

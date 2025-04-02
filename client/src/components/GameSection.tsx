@@ -54,7 +54,7 @@ export default function GameSection({ toggleShareModal }: GameSectionProps) {
             <div className="absolute inset-0 bg-black rounded-lg overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <img 
-                  src="https://imgs.search.brave.com/yvqc_mpBTVYAHEV_L8ZE4t9gvG3HRDw5HzCJzkh1-o0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvOTQ5/NDgyNTYyL3Bob3Rv/L2VhcnRoLWZyb20t/c3BhY2UuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPXJEbU5f/bjlxUmRQR3RiWlVY/NnF6cmZjNV9vSmdS/MV9YQmV5MzN1QjRO/OGs9" 
+                  src="/lagrange-game.svg" 
                   alt="LagRange Game"
                   className="w-full h-full object-cover"
                 />

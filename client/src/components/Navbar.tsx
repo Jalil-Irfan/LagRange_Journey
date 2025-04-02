@@ -57,13 +57,15 @@ export default function Navbar({ showMobileMenu, toggleMobileMenu, toggleShareMo
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-6 font-medium">
+            <div className="hidden md:flex space-x-5 font-medium">
               <a href="#home" className="hover:text-[#00F0FF] transition-colors">Home</a>
               <a href="#journey" className="hover:text-[#00F0FF] transition-colors">Journey</a>
               <a href="#build" className="hover:text-[#00F0FF] transition-colors">Build Story</a>
               <a href="#social" className="hover:text-[#00F0FF] transition-colors">Social</a>
-              <a href="#game" className="hover:text-[#00F0FF] transition-colors">Play Game</a>
+              <a href="#game" className="hover:text-[#00F0FF] transition-colors">Game</a>
               <a href="#gallery" className="hover:text-[#00F0FF] transition-colors">Gallery</a>
+              <a href="#youtube" className="hover:text-[#00F0FF] transition-colors">YouTube</a>
+              <a href="#donate" className="hover:text-[#00F0FF] transition-colors">Donate</a>
             </div>
             
             <div className="hidden md:block">
@@ -86,13 +88,15 @@ export default function Navbar({ showMobileMenu, toggleMobileMenu, toggleShareMo
         animate={{ x: showMobileMenu ? 0 : "-100%" }}
         transition={{ duration: 0.3 }}
       >
-        <div className="h-full flex flex-col items-center justify-center space-y-8 text-xl font-medium">
+        <div className="h-full flex flex-col items-center justify-center space-y-6 text-xl font-medium">
           <a href="#home" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Home</a>
           <a href="#journey" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Journey</a>
           <a href="#build" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Build Story</a>
           <a href="#social" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Social</a>
-          <a href="#game" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Play Game</a>
+          <a href="#game" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Game</a>
           <a href="#gallery" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Gallery</a>
+          <a href="#youtube" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">YouTube</a>
+          <a href="#donate" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Donate</a>
           <button onClick={closeMenu} className="absolute top-4 right-4 text-white p-2">
             <i className="fas fa-times"></i>
           </button>

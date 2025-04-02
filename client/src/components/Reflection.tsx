@@ -44,7 +44,7 @@ export default function Reflection() {
               This project has sparked a passion for game development that I plan to continue exploring. The supportive feedback from the #VibeJam community has been incredibly motivating, and I'm excited to tackle more ambitious projects in the future.
             </p>
             <div className="mt-6 text-right">
-              <span className="text-[#00F0FF] font-heading">— Your Name</span>
+              <span className="text-[#00F0FF] font-heading">— Jalil Irfan</span>
             </div>
           </div>
         </motion.div>
