@@ -71,15 +71,21 @@ export default function DonateSection() {
                 Buy me a coffee on Ko-fi
               </a>
               
-              {/* Advertising Section */}
-              <div className="bg-[#10131E] p-4 rounded-lg mb-4">
-                <h4 className="font-bold text-lg mb-2 text-white">Advertising Opportunities</h4>
+              {/* Link to Advertising Section */}
+              <div className="bg-gradient-to-r from-[#6E2CF4]/20 to-[#00F0FF]/20 p-4 rounded-lg mb-4 border border-purple-900/30">
+                <h4 className="font-bold text-lg mb-2 text-white">Advertising & Partnerships</h4>
                 <p className="text-gray-300 mb-3">
-                  Interested in advertising on my games or this website? I offer various options to showcase your brand in a creative space environment.
+                  Looking to promote your brand or product to a tech-savvy audience? Check out my dedicated advertising section for sponsorship opportunities.
                 </p>
-                <p className="text-gray-300">
-                  Contact me through my social media channels for collaboration and advertising inquiries.
-                </p>
+                <a 
+                  href="#advertise" 
+                  className="inline-flex items-center text-[#00F0FF] hover:text-[#00F0FF]/80 transition-colors"
+                >
+                  <span>View advertising options</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
               </div>
               
               <div className="mt-auto">

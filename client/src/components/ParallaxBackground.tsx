@@ -86,41 +86,53 @@ export default function ParallaxBackground({ children, onSatelliteClick }: Paral
       }
     }
     
-    // Satellite animation - smoother on mobile
+    // Satellite animation - enhanced for better performance and smoother motion
     if (satelliteRef.current) {
+      // Base rotation animation
       gsap.to(satelliteRef.current, {
         rotation: 360,
-        duration: 180,
+        duration: 240, // Slower rotation for more elegance
         repeat: -1,
-        ease: "none"
+        ease: "linear" // Ensures perfectly smooth rotation
       });
       
-      // Make the satellite movement less aggressive on mobile
+      // Make the satellite movement smoother with improved easing and timing
       if (isMobile) {
-        // Fixed position for mobile that doesn't move much with scroll
+        // Mobile optimized movement
         gsap.to(satelliteRef.current, {
-          y: window.innerHeight * 0.2,
-          x: window.innerWidth * 0.1,
-          scale: 0.6,
+          y: window.innerHeight * 0.15, // Less vertical travel on mobile
+          x: window.innerWidth * 0.08,
+          scale: 0.65,
+          ease: "power1.inOut", // Smoother acceleration and deceleration
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top top",
             end: "bottom bottom",
-            scrub: 1.5 // Smoother scrubbing on mobile
+            scrub: 2 // Smoother, more delayed scrubbing
           }
         });
       } else {
-        // Desktop behavior
+        // Enhanced desktop behavior
         gsap.to(satelliteRef.current, {
-          y: window.innerHeight * 0.8,
-          x: window.innerWidth * 0.3,
+          y: window.innerHeight * 0.6, // Less extreme vertical travel
+          x: window.innerWidth * 0.25,
           scale: 0.8,
+          ease: "power1.inOut", // Smoother acceleration and deceleration
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top top",
             end: "bottom bottom",
-            scrub: true
+            scrub: 0.8 // Better response time
           }
+        });
+        
+        // Add a subtle floating animation for more liveliness
+        gsap.to(satelliteRef.current, {
+          y: "+=15", // Small oscillation
+          duration: 3.5,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut"
         });
       }
     }
@@ -134,16 +146,16 @@ export default function ParallaxBackground({ children, onSatelliteClick }: Paral
         const speed = element.getAttribute('data-speed');
         
         if (speed) {
-          const effectSpeed = isMobile ? parseFloat(speed) * 0.3 : parseFloat(speed);
+          const effectSpeed = isMobile ? parseFloat(speed) * 0.4 : parseFloat(speed);
           
           gsap.to(element, {
             y: (i, el) => -effectSpeed * (ScrollTrigger.maxScroll(window) - el.offsetTop),
-            ease: 'none',
+            ease: 'power1.out', // Better easing for smoother motion
             scrollTrigger: {
               trigger: element,
               start: 'top bottom',
               end: 'bottom top',
-              scrub: isMobile ? 1.5 : true, // Smoother on mobile
+              scrub: isMobile ? 2 : 0.5, // More granular control for smoother effects
               invalidateOnRefresh: true
             }
           });
@@ -183,11 +195,7 @@ export default function ParallaxBackground({ children, onSatelliteClick }: Paral
         className="fixed z-10 satellite-container cursor-pointer hover:satellite-shadow"
         style={{ 
           top: isMobile ? '10%' : '15%', 
-          right: isMobile ? '5%' : '10%',
-          // Less rotation on mobile for better performance
-          transform: `rotate(${isMobile ? scrollPosition * 180 : scrollPosition * 360}deg)`,
-          // Smaller on mobile
-          scale: isMobile ? 0.6 : 1
+          right: isMobile ? '5%' : '10%'
         }}
         onClick={onSatelliteClick}
         title="Click me to share!"

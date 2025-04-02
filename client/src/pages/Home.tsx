@@ -9,6 +9,7 @@ import Reflection from "@/components/Reflection";
 import MediaGallery from "@/components/MediaGallery";
 import YouTubeTimeline from "@/components/YouTubeTimeline";
 import DonateSection from "@/components/DonateSection";
+import AdvertisingSection from "@/components/AdvertisingSection";
 import Footer from "@/components/Footer";
 import ShareModal from "@/components/ShareModal";
 import Lightbox from "@/components/Lightbox";
@@ -65,40 +66,44 @@ export default function Home() {
           toggleShareModal={toggleShareModal}
         />
         
-        <section data-speed="0.2">
+        <section data-speed="0.2" className="parallax-layer">
           <Hero toggleShareModal={toggleShareModal} />
         </section>
         
-        <section data-speed="0.1">
+        <section data-speed="0.1" className="parallax-layer">
           <Journey />
         </section>
         
-        <section data-speed="0.15">
+        <section data-speed="0.15" className="parallax-layer">
           <BuildStory />
         </section>
         
-        <section data-speed="0.05">
+        <section data-speed="0.05" className="parallax-layer">
           <SocialHighlights />
         </section>
         
-        <section data-speed="0.1">
+        <section data-speed="0.1" className="parallax-layer">
           <GameSection toggleShareModal={toggleShareModal} />
         </section>
         
-        <section data-speed="0.15">
+        <section data-speed="0.15" className="parallax-layer">
           <Reflection />
         </section>
         
-        <section data-speed="0.05">
+        <section data-speed="0.05" className="parallax-layer">
           <MediaGallery openLightbox={openLightbox} />
         </section>
         
-        <section data-speed="0.1">
+        <section data-speed="0.1" className="parallax-layer">
           <YouTubeTimeline />
         </section>
         
-        <section data-speed="0.05">
+        <section data-speed="0.05" className="parallax-layer">
           <DonateSection />
+        </section>
+        
+        <section data-speed="0.1" className="parallax-layer">
+          <AdvertisingSection />
         </section>
         
         <section>

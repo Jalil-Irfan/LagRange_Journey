@@ -22,6 +22,24 @@ export default function Navbar({ showMobileMenu, toggleMobileMenu, toggleShareMo
   const closeMenu = () => {
     if (showMobileMenu) toggleMobileMenu();
   };
+  
+  // Enhanced smooth scrolling function for anchor links
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    closeMenu();
+    
+    const element = document.getElementById(id);
+    if (element) {
+      const navbarHeight = document.getElementById('navbar')?.offsetHeight || 0;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - navbarHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <>
@@ -58,14 +76,15 @@ export default function Navbar({ showMobileMenu, toggleMobileMenu, toggleShareMo
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-5 font-medium">
-              <a href="#home" className="hover:text-[#00F0FF] transition-colors">Home</a>
-              <a href="#journey" className="hover:text-[#00F0FF] transition-colors">Journey</a>
-              <a href="#build" className="hover:text-[#00F0FF] transition-colors">Build Story</a>
-              <a href="#social" className="hover:text-[#00F0FF] transition-colors">Social</a>
-              <a href="#game" className="hover:text-[#00F0FF] transition-colors">Game</a>
-              <a href="#gallery" className="hover:text-[#00F0FF] transition-colors">Gallery</a>
-              <a href="#youtube" className="hover:text-[#00F0FF] transition-colors">YouTube</a>
-              <a href="#donate" className="hover:text-[#00F0FF] transition-colors">Donate</a>
+              <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="hover:text-[#00F0FF] transition-colors">Home</a>
+              <a href="#journey" onClick={(e) => handleNavClick(e, 'journey')} className="hover:text-[#00F0FF] transition-colors">Journey</a>
+              <a href="#build" onClick={(e) => handleNavClick(e, 'build')} className="hover:text-[#00F0FF] transition-colors">Build Story</a>
+              <a href="#social" onClick={(e) => handleNavClick(e, 'social')} className="hover:text-[#00F0FF] transition-colors">Social</a>
+              <a href="#game" onClick={(e) => handleNavClick(e, 'game')} className="hover:text-[#00F0FF] transition-colors">Game</a>
+              <a href="#gallery" onClick={(e) => handleNavClick(e, 'gallery')} className="hover:text-[#00F0FF] transition-colors">Gallery</a>
+              <a href="#youtube" onClick={(e) => handleNavClick(e, 'youtube')} className="hover:text-[#00F0FF] transition-colors">YouTube</a>
+              <a href="#donate" onClick={(e) => handleNavClick(e, 'donate')} className="hover:text-[#00F0FF] transition-colors">Donate</a>
+              <a href="#advertise" onClick={(e) => handleNavClick(e, 'advertise')} className="hover:text-[#00F0FF] transition-colors">Advertise</a>
             </div>
             
             <div className="hidden md:block">
@@ -89,14 +108,15 @@ export default function Navbar({ showMobileMenu, toggleMobileMenu, toggleShareMo
         transition={{ duration: 0.3 }}
       >
         <div className="h-full flex flex-col items-center justify-center space-y-6 text-xl font-medium">
-          <a href="#home" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Home</a>
-          <a href="#journey" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Journey</a>
-          <a href="#build" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Build Story</a>
-          <a href="#social" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Social</a>
-          <a href="#game" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Game</a>
-          <a href="#gallery" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Gallery</a>
-          <a href="#youtube" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">YouTube</a>
-          <a href="#donate" onClick={closeMenu} className="hover:text-[#00F0FF] transition-colors">Donate</a>
+          <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="hover:text-[#00F0FF] transition-colors">Home</a>
+          <a href="#journey" onClick={(e) => handleNavClick(e, 'journey')} className="hover:text-[#00F0FF] transition-colors">Journey</a>
+          <a href="#build" onClick={(e) => handleNavClick(e, 'build')} className="hover:text-[#00F0FF] transition-colors">Build Story</a>
+          <a href="#social" onClick={(e) => handleNavClick(e, 'social')} className="hover:text-[#00F0FF] transition-colors">Social</a>
+          <a href="#game" onClick={(e) => handleNavClick(e, 'game')} className="hover:text-[#00F0FF] transition-colors">Game</a>
+          <a href="#gallery" onClick={(e) => handleNavClick(e, 'gallery')} className="hover:text-[#00F0FF] transition-colors">Gallery</a>
+          <a href="#youtube" onClick={(e) => handleNavClick(e, 'youtube')} className="hover:text-[#00F0FF] transition-colors">YouTube</a>
+          <a href="#donate" onClick={(e) => handleNavClick(e, 'donate')} className="hover:text-[#00F0FF] transition-colors">Donate</a>
+          <a href="#advertise" onClick={(e) => handleNavClick(e, 'advertise')} className="hover:text-[#00F0FF] transition-colors">Advertise</a>
           <button onClick={closeMenu} className="absolute top-4 right-4 text-white p-2">
             <i className="fas fa-times"></i>
           </button>
