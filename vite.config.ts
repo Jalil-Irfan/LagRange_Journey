@@ -5,6 +5,7 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
+  base: '/LagRange_Journey/', 
   plugins: [
     react(),
     runtimeErrorOverlay(),
