@@ -41,10 +41,15 @@ var vite_config_default = defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets")
     }
   },
+  // 👇 Change this section
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
-    emptyOutDir: true
+    // ⚠️ Output should go to dist/ directly
+    outDir: path.resolve(import.meta.dirname, "dist"),
+    emptyOutDir: true,
+    rollupOptions: {
+      input: path.resolve(import.meta.dirname, "client", "index.html")
+    }
   }
 });
 
