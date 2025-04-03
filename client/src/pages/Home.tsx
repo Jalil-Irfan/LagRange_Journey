@@ -61,33 +61,38 @@ export default function Home() {
   const timelineEvents = [
     {
       date: "March 17, 2025",
-      title: "Discovery",
-      description: "Discovered the VibeJam challenge created by Pieter Levels. Decided to participate despite having limited game development experience.",
-      imageSrc: "/public/timeline-discovery.jpg"
+      title: "Discovering VibeJam",
+      description: "Found @levelsio's VibeJam challenge on Twitter, a competition to create browser games using AI. Excited to join despite having zero game development experience!",
+      imageSrc: "/timeline-discovery.svg",
+      tools: "Initial research & planning"
     },
     {
       date: "March 20, 2025",
       title: "Paper Plane Game",
-      description: "First attempt at creating a game for VibeJam. Built a simple paper plane flying game using AI assistance.",
-      imageSrc: "/public/timeline-paperplane.jpg"
+      description: "First one-day attempt with Cursor AI assistance. Created a simple paper plane flying game with basic physics and wind mechanics. Learning the basics of game development while struggling with collision detection.",
+      imageSrc: "/timeline-paperplane.svg",
+      tools: "Built with Cursor AI"
     },
     {
       date: "March 25, 2025",
       title: "Fractal Drop Game",
-      description: "Second attempt with a more visually interesting concept. Created a game where players navigate through fractal patterns.",
-      imageSrc: "/public/timeline-fractal.jpg"
+      description: "Second one-day attempt using ChatGPT for code generation. Developed a more visually interesting concept where players navigate through procedurally generated fractal patterns with increasing difficulty.",
+      imageSrc: "/timeline-fractal.svg",
+      tools: "Powered by ChatGPT"
     },
     {
       date: "March 31, 2025",
       title: "Physics Puzzle Game",
-      description: "Third attempt focusing on physics-based gameplay. A challenging puzzle game with object manipulation mechanics.",
-      imageSrc: "/public/timeline-physics.jpg"
+      description: "Third one-day attempt using Replit AI. Created a physics-based puzzle game with object manipulation mechanics, pulleys, and levers. Getting closer to something playable!",
+      imageSrc: "/timeline-physics.svg",
+      tools: "Created with Replit AI"
     },
     {
       date: "April 2, 2025",
       title: "LagRange in Space",
-      description: "Final successful submission! A space adventure game with unique mechanics and engaging storyline.",
-      imageSrc: "/public/timeline-lagrange.jpg"
+      description: "Final successful submission! A cosmic adventure game set in Lagrangian points with unique zero-gravity mechanics, puzzle-solving, and an engaging storyline about space exploration. Using all three AI tools together made this possible!",
+      imageSrc: "/timeline-lagrange.svg",
+      tools: "Cursor AI + Replit AI + ChatGPT"
     }
   ];
 
@@ -128,7 +133,7 @@ export default function Home() {
               VibeJam Challenge Journey
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              My 16-day odyssey creating AI-generated browser games for Pieter Levels' VibeJam competition
+              My odyssey creating AI-generated browser games for <a href="https://twitter.com/levelsio" target="_blank" rel="noopener noreferrer" className="text-gradient font-medium hover:underline">Pieter Levels'</a> VibeJam competition
             </p>
             <motion.div 
               className="flex flex-col md:flex-row gap-4 justify-center"
@@ -176,7 +181,7 @@ export default function Home() {
                   <span className="text-mono text-sm tracking-wider text-purple-300">{event.date}</span>
                   <h3 className="text-2xl font-bold text-gradient">{event.title}</h3>
                   <p className="text-gray-300">{event.description}</p>
-                  {/* Placeholder image - will be replaced with actual screenshots */}
+                  {/* Timeline image */}
                   <div className="aspect-video bg-gray-800 rounded-lg overflow-hidden mt-4">
                     <div 
                       className="w-full h-full bg-cover bg-center"
@@ -184,6 +189,13 @@ export default function Home() {
                       onClick={() => openLightbox(event.imageSrc)}
                     ></div>
                   </div>
+                  {/* Tool attribution */}
+                  {event.tools && (
+                    <div className="flex items-center space-x-2 mt-2">
+                      <div className="h-1 w-1 rounded-full bg-purple-400"></div>
+                      <span className="text-sm text-cyan-300 font-medium">{event.tools}</span>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -544,6 +556,161 @@ export default function Home() {
               </button>
             </div>
           </motion.div>
+        </div>
+      </section>
+      
+      {/* Tools Section */}
+      <section id="tools" className="py-20 px-4 md:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gradient">
+            Tools Behind the Journey
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Pieter Levels Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="card-glassmorphism p-6 rounded-lg card-hover gradient-border-animated"
+            >
+              <div className="text-center mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-cyan-400 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold">Pieter Levels</h3>
+                <p className="text-purple-300 text-sm mt-1">Creator of VibeJam Challenge</p>
+              </div>
+              <p className="text-gray-300 text-sm text-center">
+                Indie maker and founder of Nomad List, Remote OK, and many other successful projects. 
+                His VibeJam challenge inspired developers worldwide to create AI-powered browser games.
+              </p>
+              <div className="mt-4 text-center">
+                <a 
+                  href="https://twitter.com/levelsio" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-cyan-300 hover:text-cyan-200"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
+                  </svg>
+                  @levelsio
+                </a>
+              </div>
+            </motion.div>
+            
+            {/* Cursor AI Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="card-glassmorphism p-6 rounded-lg card-hover gradient-border-animated"
+            >
+              <div className="text-center mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-cyan-400 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold">Cursor AI</h3>
+                <p className="text-purple-300 text-sm mt-1">AI-powered code editor</p>
+              </div>
+              <p className="text-gray-300 text-sm text-center">
+                An advanced code editor with AI capabilities that helped me rapidly develop game mechanics
+                and solve complex programming challenges throughout the journey.
+              </p>
+              <div className="mt-4 text-center">
+                <a 
+                  href="https://cursor.sh" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-cyan-300 hover:text-cyan-200"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd" />
+                  </svg>
+                  cursor.sh
+                </a>
+              </div>
+            </motion.div>
+            
+            {/* Replit AI Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="card-glassmorphism p-6 rounded-lg card-hover gradient-border-animated"
+            >
+              <div className="text-center mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-cyan-400 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold">Replit AI</h3>
+                <p className="text-purple-300 text-sm mt-1">Online IDE and coding platform</p>
+              </div>
+              <p className="text-gray-300 text-sm text-center">
+                A powerful online development environment that enabled rapid prototyping 
+                and deployment of my browser games, complete with integrated AI assistance.
+              </p>
+              <div className="mt-4 text-center">
+                <a 
+                  href="https://replit.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-cyan-300 hover:text-cyan-200"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd" />
+                  </svg>
+                  replit.com
+                </a>
+              </div>
+            </motion.div>
+            
+            {/* ChatGPT Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="card-glassmorphism p-6 rounded-lg card-hover gradient-border-animated"
+            >
+              <div className="text-center mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-cyan-400 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold">ChatGPT</h3>
+                <p className="text-purple-300 text-sm mt-1">AI language model by OpenAI</p>
+              </div>
+              <p className="text-gray-300 text-sm text-center">
+                A versatile AI assistant that provided game design ideas, helped debug code,
+                and offered solutions to game development challenges throughout the process.
+              </p>
+              <div className="mt-4 text-center">
+                <a 
+                  href="https://chat.openai.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-cyan-300 hover:text-cyan-200"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd" />
+                  </svg>
+                  chat.openai.com
+                </a>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
       

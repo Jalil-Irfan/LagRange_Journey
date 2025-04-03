@@ -66,6 +66,7 @@ export default function Navbar({ showMobileMenu, toggleMobileMenu, toggleShareMo
     { id: "process", label: "Process" },
     { id: "docs", label: "Documentation" },
     { id: "lessons", label: "Lessons" },
+    { id: "tools", label: "AI Tools" },
     { id: "connect", label: "Connect" }
   ];
 

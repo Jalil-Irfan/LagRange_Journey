@@ -20,6 +20,7 @@ export default function Footer({ toggleShareModal }: FooterProps) {
     { id: "process", label: "Process" },
     { id: "docs", label: "Documentation" },
     { id: "lessons", label: "Lessons" },
+    { id: "tools", label: "AI Tools" },
     { id: "connect", label: "Connect" }
   ];
 
@@ -32,7 +33,7 @@ export default function Footer({ toggleShareModal }: FooterProps) {
               <span className="text-2xl font-heading font-bold text-gradient">
                 VibeJam Journey
               </span>
-              <p className="text-gray-400 mt-2">My 16-day game development odyssey</p>
+              <p className="text-gray-400 mt-2">My game development odyssey</p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -72,7 +73,7 @@ export default function Footer({ toggleShareModal }: FooterProps) {
             <div className="card-glassmorphism p-5 rounded-xl">
               <h3 className="text-gradient font-bold text-lg mb-3">About VibeJam</h3>
               <p className="text-gray-300 text-sm">
-                VibeJam is a browser game competition created by Pieter Levels where participants create games using AI assistance. 
+                VibeJam is a browser game competition created by <a href="https://twitter.com/levelsio" target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline">Pieter Levels</a> (founder of <a href="https://nomadlist.com" target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline">Nomad List</a> and <a href="https://remoteok.com" target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline">Remote OK</a>) where participants create games using AI assistance. 
                 The challenge combines creativity, technical problem-solving, and learning through iteration.
               </p>
             </div>
@@ -82,7 +83,7 @@ export default function Footer({ toggleShareModal }: FooterProps) {
               <ul className="text-gray-300 text-sm space-y-1">
                 <li>• Started with no game development experience</li>
                 <li>• Created and failed with 3 game concepts before success</li>
-                <li>• Used AI tools to accelerate learning and development</li>
+                <li>• Used <span className="text-cyan-400">Cursor AI</span>, <span className="text-cyan-400">Replit AI</span>, and <span className="text-cyan-400">ChatGPT</span> to overcome challenges</li>
                 <li>• Documented the entire process as a learning resource</li>
               </ul>
             </div>
@@ -129,10 +130,10 @@ export default function Footer({ toggleShareModal }: FooterProps) {
             </div>
             
             <div className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} Jalil Irfan. Created for <span className="text-[#8A2BE2]">#VibeJam</span>
+              &copy; {new Date().getFullYear()} Jalil Irfan. Created for <a href="https://twitter.com/levelsio" target="_blank" rel="noreferrer" className="text-[#8A2BE2] hover:underline">#VibeJam</a> by <a href="https://twitter.com/levelsio" target="_blank" rel="noreferrer" className="text-[#8A2BE2] hover:underline">@levelsio</a>
             </div>
             <div className="mt-2 text-gray-600 text-xs">
-              Built with AI assistance. Powered by perseverance and curiosity.
+              Built with <a href="https://cursor.sh" target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline">Cursor AI</a>, <a href="https://replit.com" target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline">Replit AI</a>, and <a href="https://chat.openai.com" target="_blank" rel="noreferrer" className="text-cyan-400 hover:underline">ChatGPT</a>. Powered by perseverance and curiosity.
             </div>
           </div>
         </div>
